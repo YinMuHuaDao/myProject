@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>img/bg.jpg</file>
+        <file>img/title_bg.png</file>
+        <file>img/icon1.png</file>
+        <file>img/btn1.png</file>
+        <file>img/btn2.png</file>
+        <file>img/btn3.png</file>
+        <file>img/btn4.png</file>
+        <file>img/bottom_bg.png</file>
+        <file>img/bicon0.png</file>
+        <file>img/bicon1.png</file>
+        <file>img/bicon2.png</file>
+        <file>img/bicon3.png</file>
+        <file>img/bicon4.png</file>
+        <file>img/bicon5.png</file>
+        <file>img/tab_bar.png</file>
+        <file>img/rightTab.png</file>
+        <file>img/leftTab.png</file>
+        <file>img/informations.png</file>
+    </qresource>
+</RCC>
