@@ -70,6 +70,10 @@ public:
 
 	void initialUi();
 
+	bool insertData();
+
+	bool isInsert = false;
+
 protected:
     void paintEvent(QPaintEvent *);
 
@@ -80,6 +84,8 @@ private:
 	void initial();
 
 	db myDb;
+
+	QString dbName;
 
 	bool isOpen;
 
@@ -101,6 +107,10 @@ public slots:
     void on_toolButton_1_clicked();
 
 	void on_bbtn0_clicked();
+
+	void on_bbtn1_clicked();
+
+	void on_bbtn2_clicked();
 
 	void dealSingnal(QString &str);
 

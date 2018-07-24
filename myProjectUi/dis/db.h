@@ -5,6 +5,7 @@
 #include <qstring.h>
 #include <QtSql\qsqlerror.h>
 #include <qdebug.h>
+#include <QtSql\qsqlerror.h>
 
 class db : public QObject
 {
@@ -18,4 +19,6 @@ public:
 	~db();
 
 	bool connectDatabase( const QString databaseName );
+
+	QSqlDatabase getInstance();
 };

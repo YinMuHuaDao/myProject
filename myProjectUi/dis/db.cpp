@@ -37,11 +37,16 @@ bool db::connectDatabase(const QString databaseName)
 
 		return true;
 
-		
 	}
 
 	else
 	{
 		qDebug() << "the error is " << dbs.lastError();
 	}
+}
+
+
+QSqlDatabase db::getInstance()
+{
+	return dbs;
 }

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_dis_t {
-    QByteArrayData data[9];
-    char stringdata0[94];
+    QByteArrayData data[11];
+    char stringdata0[128];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,15 +33,18 @@ QT_MOC_LITERAL(0, 0, 3), // "dis"
 QT_MOC_LITERAL(1, 4, 23), // "on_toolButton_1_clicked"
 QT_MOC_LITERAL(2, 28, 0), // ""
 QT_MOC_LITERAL(3, 29, 16), // "on_bbtn0_clicked"
-QT_MOC_LITERAL(4, 46, 11), // "dealSingnal"
-QT_MOC_LITERAL(5, 58, 8), // "QString&"
-QT_MOC_LITERAL(6, 67, 3), // "str"
-QT_MOC_LITERAL(7, 71, 11), // "dealtimeout"
-QT_MOC_LITERAL(8, 83, 10) // "dealNumber"
+QT_MOC_LITERAL(4, 46, 16), // "on_bbtn1_clicked"
+QT_MOC_LITERAL(5, 63, 16), // "on_bbtn2_clicked"
+QT_MOC_LITERAL(6, 80, 11), // "dealSingnal"
+QT_MOC_LITERAL(7, 92, 8), // "QString&"
+QT_MOC_LITERAL(8, 101, 3), // "str"
+QT_MOC_LITERAL(9, 105, 11), // "dealtimeout"
+QT_MOC_LITERAL(10, 117, 10) // "dealNumber"
 
     },
     "dis\0on_toolButton_1_clicked\0\0"
-    "on_bbtn0_clicked\0dealSingnal\0QString&\0"
+    "on_bbtn0_clicked\0on_bbtn1_clicked\0"
+    "on_bbtn2_clicked\0dealSingnal\0QString&\0"
     "str\0dealtimeout\0dealNumber"
 };
 #undef QT_MOC_LITERAL
@@ -52,7 +55,7 @@ static const uint qt_meta_data_dis[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -60,16 +63,20 @@ static const uint qt_meta_data_dis[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   39,    2, 0x0a /* Public */,
-       3,    0,   40,    2, 0x0a /* Public */,
-       4,    1,   41,    2, 0x0a /* Public */,
-       7,    0,   44,    2, 0x0a /* Public */,
-       8,    1,   45,    2, 0x0a /* Public */,
+       1,    0,   49,    2, 0x0a /* Public */,
+       3,    0,   50,    2, 0x0a /* Public */,
+       4,    0,   51,    2, 0x0a /* Public */,
+       5,    0,   52,    2, 0x0a /* Public */,
+       6,    1,   53,    2, 0x0a /* Public */,
+       9,    0,   56,    2, 0x0a /* Public */,
+      10,    1,   57,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 5,    6,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 7,    8,
     QMetaType::Void,
     QMetaType::Int, QMetaType::Int,    2,
 
@@ -84,9 +91,11 @@ void dis::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         switch (_id) {
         case 0: _t->on_toolButton_1_clicked(); break;
         case 1: _t->on_bbtn0_clicked(); break;
-        case 2: _t->dealSingnal((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 3: _t->dealtimeout(); break;
-        case 4: { int _r = _t->dealNumber((*reinterpret_cast< int(*)>(_a[1])));
+        case 2: _t->on_bbtn1_clicked(); break;
+        case 3: _t->on_bbtn2_clicked(); break;
+        case 4: _t->dealSingnal((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 5: _t->dealtimeout(); break;
+        case 6: { int _r = _t->dealNumber((*reinterpret_cast< int(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         default: ;
         }
@@ -118,13 +127,13 @@ int dis::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 7;
     }
     return _id;
 }

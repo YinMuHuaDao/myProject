@@ -1,5 +1,5 @@
-﻿生成启动时间为 2018/7/17 15:50:47。
-     1>项目“D:\project\myProjectUi\dis\dis.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2018/7/24 15:29:44。
+     1>项目“D:\project\gitMyProject\myProject\myProjectUi\dis\dis.vcxproj”在节点 2 上(Build 个目标)。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_db.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_db.cpp, GeneratedFiles\Release\moc_db.cpp.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_dis.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_dis.cpp, GeneratedFiles\Release\moc_dis.cpp.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_thd.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_thd.cpp, GeneratedFiles\Release\moc_thd.cpp.
@@ -7,7 +7,7 @@
          D:\visual studio\vs2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\QT\5.6\msvc2013_64\include /I.\GeneratedFiles\Debug /ID:\QT\5.6\msvc2013_64\include\QtCore /ID:\QT\5.6\msvc2013_64\include\QtGui /ID:\QT\5.6\msvc2013_64\include\QtWidgets /I"D:\Program Files\vrlink5.4\vrlink5.4\include" /Idebug /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D _WINDOWS /D QT_LARGEFILE_SUPPORT /D QT_NO_DEBUG /D NDEBUG /D QT_SQL_LIB /D RTI_USES_STD_FSTREAM /D QT_XML_LIB /D DtDIS=1 /D _DEBUG /D BOOST_HAS_THREADS /D _CRT_SECURE_NO_WARNINGS /D _CRT_NONSTDC_NO_DEPRECATE /D DT_USE_DLL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt dis.cpp
          dis.cpp
        Link:
-         D:\visual studio\vs2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\project\myProjectUi\x64\Debug\\dis.exe" /NOLOGO /LIBPATH:D:\QT\5.6\msvc2013_64\lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:"D:\Program Files\vrlink5.4\vrlink5.4\lib64" /LIBPATH:"D:\Program Files\vrlink5.4\vrlink5.4/lib64/Debug" qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib D:\QT\5.6\msvc2013_64\lib\qtmaind.lib shell32.lib D:\QT\5.6\msvc2013_64\lib\Qt5Widgetsd.lib D:\QT\5.6\msvc2013_64\lib\Qt5Guid.lib D:\QT\5.6\msvc2013_64\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib vlutild.lib matrixd.lib mtld.lib vld.lib vlDISd.lib Qt5Sqld.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\project\myProjectUi\x64\Debug\dis.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\project\myProjectUi\x64\Debug\dis.lib" /MACHINE:X64 x64\Debug\dis.res
+         D:\visual studio\vs2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\project\gitMyProject\myProject\myProjectUi\x64\Debug\\dis.exe" /NOLOGO /LIBPATH:D:\QT\5.6\msvc2013_64\lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:"D:\Program Files\vrlink5.4\vrlink5.4\lib64" /LIBPATH:"D:\Program Files\vrlink5.4\vrlink5.4/lib64/Debug" qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib D:\QT\5.6\msvc2013_64\lib\qtmaind.lib shell32.lib D:\QT\5.6\msvc2013_64\lib\Qt5Widgetsd.lib D:\QT\5.6\msvc2013_64\lib\Qt5Guid.lib D:\QT\5.6\msvc2013_64\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib vlutild.lib matrixd.lib mtld.lib vld.lib vlDISd.lib Qt5Sqld.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\project\gitMyProject\myProject\myProjectUi\x64\Debug\dis.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\project\gitMyProject\myProject\myProjectUi\x64\Debug\dis.lib" /MACHINE:X64 x64\Debug\dis.res
          x64\Debug\db.obj
          x64\Debug\dis.obj
          x64\Debug\moc_db.obj
@@ -17,9 +17,9 @@
          x64\Debug\qrc_source.obj
          x64\Debug\main.obj
          x64\Debug\thd.obj
-         dis.vcxproj -> D:\project\myProjectUi\x64\Debug\dis.exe
-     1>已完成生成项目“D:\project\myProjectUi\dis\dis.vcxproj”(Build 个目标)的操作。
+         dis.vcxproj -> D:\project\gitMyProject\myProject\myProjectUi\x64\Debug\dis.exe
+     1>已完成生成项目“D:\project\gitMyProject\myProject\myProjectUi\dis\dis.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:03.15
+已用时间 00:00:03.23

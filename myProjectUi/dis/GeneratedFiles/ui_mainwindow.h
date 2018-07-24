@@ -234,6 +234,12 @@ public:
 
         horizontalLayout_3->addWidget(toolButton_1);
 
+        horizontalLayout_3->setStretch(0, 4);
+        horizontalLayout_3->setStretch(1, 10);
+        horizontalLayout_3->setStretch(2, 1);
+        horizontalLayout_3->setStretch(3, 1);
+        horizontalLayout_3->setStretch(4, 1);
+        horizontalLayout_3->setStretch(5, 1);
 
         horizontalLayout->addWidget(titleBar, 0, Qt::AlignTop);
 

@@ -1,4 +1,7 @@
 #include "dis.h"
+#include <qinputdialog.h>
+#include <qdir.h>
+#include <qlabel.h>
 
 int keybrdTick()
 {
@@ -46,24 +49,6 @@ dis::dis(QWidget *parent)
 	QObject::connect(timer, &QTimer::timeout, this, &dis::dealtimeout);
 
 	pMapper = new QSignalMapper();
-
-	isOpen = myDb.connectDatabase("mydb.db");
-
-	QSqlQuery query;
-
-	query.exec(QString(
-		"create table info ("
-		"id int auto_increment primary key ,"
-		"rotationVelocity string ,"
-		"acceleration string ,"
-		"velocity string,"
-		"entitytype string,"
-		"location string,"
-		"globalId string,"
-		"orientation string );"
-		));
-
-	
 
 	timer->start(100);
 
@@ -190,7 +175,8 @@ void dis::paintEvent(QPaintEvent *)
 		// can look at position information in topographic coordinates.
 	}
 
-	if (relCount == 0){
+	if (relCount == 0)
+	{
 
 		int i = relCount;
 
@@ -242,6 +228,11 @@ void dis::paintEvent(QPaintEvent *)
 		connect(pMapper,static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), this, &dis::dealNumber);
 	}
 
+	if (isInsert == true)
+	{
+		insertData();
+	}
+
 	// Sleep till next iteration.
 	DtSleep(0.1);
 	
@@ -250,7 +241,7 @@ void dis::paintEvent(QPaintEvent *)
 void dis::initialUi()
 {
 	this->setObjectName("mainWindow");
-	this->setWindowFlags(Qt::FramelessWindowHint);
+	//this->setWindowFlags(Qt::FramelessWindowHint);
 	this->setStyleSheet(QString("#mainWindow{border-image:url(':/new/prefix1/img/bg.jpg');}"));
 
 	ui.titleBar->setObjectName("titleBar");
@@ -301,9 +292,9 @@ void dis::initialUi()
 		<< ui.bbtn4
 		<< ui.bbtn5;
 
-	bottomTextList << QString::fromLocal8Bit("影像地图")
-		<< QString::fromLocal8Bit("态势标签")
-		<< QString::fromLocal8Bit("动态目标")
+	bottomTextList << QString::fromLocal8Bit("确定")
+		<< QString::fromLocal8Bit("暂停")
+		<< QString::fromLocal8Bit("结束")
 		<< QString::fromLocal8Bit("空间量算")
 		<< QString::fromLocal8Bit("空间分析")
 		<< QString::fromLocal8Bit("综合查询");
@@ -321,7 +312,6 @@ void dis::initialUi()
 		btn->setText(bottomTextList.at(i));
 
 	}
-
 
 	ui.tabWidget->setObjectName("tabWidget");
 	ui.tabWidget->setStyleSheet(
@@ -346,26 +336,80 @@ void dis::on_toolButton_1_clicked()
 
 void dis::on_bbtn0_clicked()
 {
-	if (isOpen)
+	bool ok;
+	QString text = QInputDialog::getText(this, QString::fromLocal8Bit("数据库名称"),
+		tr("database name:"), QLineEdit::Normal,
+		QString::fromLocal8Bit("请输入"), &ok);
+	if (ok && !text.isEmpty())
 	{
+		dbName = text;  //数据库名称
+
+		isOpen = myDb.connectDatabase(dbName + ".db");
+
 		QSqlQuery query;
 
-		query.prepare(QString(
-			"insert into info(rotationVelocity,acceleration,velocity,entityType,location,globalId,orientation)"
-			"values(:rotationVelocity,:acceleration,:velocity,:entityType,:location,:globalId,:orientation)"
-			));
-		
-		query.bindValue(":rotationVelocity", rotationalVelocity);
-		query.bindValue(":acceleration", acceleration);
-		query.bindValue(":velocity", velocity);
-		query.bindValue(":entitytype", entityType);
-		query.bindValue(":location", location);
-		query.bindValue(":globalId", globalId);
-		query.bindValue(":orientation", orientation);
+		query.exec(QString(
+			"create table info ("
+			"id int auto_increment primary key ,"
+			"rotationVelocity string ,"
+			"acceleration string ,"
+			"velocity string,"
+			"entitytype string,"
+			"location string,"
+			"globalId string,"
+			"orientation string );"
 
-		query.exec();
-		qDebug() << "data has been insert";
+			));
 	}
+
+	if (isOpen)
+	{
+		isInsert = true;
+	}
+}
+
+void dis::on_bbtn1_clicked()
+{
+	if (isOpen)
+	{
+		isInsert = !isInsert;
+	}
+}
+
+
+// 断开数据库连接
+void dis::on_bbtn2_clicked()
+{
+	QSqlDatabase::removeDatabase(dbName);
+	
+	myDb.getInstance().close();
+}
+
+bool dis::insertData()
+{
+	
+	QSqlQuery myquery;
+
+	myquery.prepare(QString(
+		"insert into info(rotationVelocity,acceleration,velocity,entityType,location,globalId,orientation)"
+		"values(:rotationVelocity,:acceleration,:velocity,:entityType,:location,:globalId,:orientation)"
+		));
+
+	myquery.bindValue(":rotationVelocity", rotationalVelocity);
+	myquery.bindValue(":acceleration", acceleration);
+	myquery.bindValue(":velocity", velocity);
+	myquery.bindValue(":entitytype", entityType);
+	myquery.bindValue(":location", location);
+	myquery.bindValue(":globalId", globalId);
+	myquery.bindValue(":orientation", orientation);
+
+	bool successful = myquery.exec();
+
+	qDebug() << "data insert is successful" << successful;
+
+	qDebug() << myquery.lastError();
+	
+	return successful;
 }
 
 
