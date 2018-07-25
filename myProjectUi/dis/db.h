@@ -7,6 +7,7 @@
 #include <qdebug.h>
 #include <QtSql\qsqlerror.h>
 
+
 class db : public QObject
 {
 	Q_OBJECT
